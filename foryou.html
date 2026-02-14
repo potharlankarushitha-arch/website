@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Valentine's letter for my bestie 💖</title>
+    <!-- Google Font for a cute, friendly vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fce4e4 0%, #ffe9f4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Quicksand', sans-serif;
+            padding: 20px;
+        }
+
+        /* main letter card */
+        .letter-card {
+            max-width: 700px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            background: #fff9fc;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 20px 40px rgba(201, 76, 116, 0.25), 0 10px 15px rgba(240, 98, 146, 0.2);
+            padding: 40px 35px;
+            border: 2px solid #ffb6c1;
+            transition: 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* floating hearts decoration */
+        .letter-card::before {
+            content: "❤️🧡💛💚💙💜";
+            font-size: 60px;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            opacity: 0.1;
+            pointer-events: none;
+            transform: rotate(-5deg);
+            white-space: nowrap;
+            letter-spacing: 30px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #d43f6b;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #ffd9e2;
+            word-break: break-word;
+            line-height: 1.2;
+        }
+
+        .sub-header {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #b3416b;
+            background: #ffeef2;
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 60px;
+            margin: 0 auto 25px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            border: 2px dashed #ff90b5;
+        }
+
+        .message {
+            background: white;
+            padding: 30px 28px;
+            border-radius: 40px 40px 40px 12px;
+            box-shadow: inset 0 2px 10px #ffe2e9, 0 8px 0 #feb4c5;
+            border: 1px solid #ffbfd5;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #4e2b3a;
+            margin-bottom: 30px;
+        }
+
+        .message p {
+            margin-bottom: 18px;
+        }
+
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .message .emoji-burst {
+            font-size: 1.8rem;
+            display: block;
+            text-align: center;
+            margin: 15px 0 5px;
+        }
+
+        /* interactive bestie zone */
+        .bestie-zone {
+            background: #ffecf0;
+            border-radius: 60px 60px 30px 30px;
+            padding: 30px 20px 25px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 3px solid #ffa5b9;
+            box-shadow: inset 0 -5px 0 #f28ba1;
+        }
+
+        .button-heart {
+            background: #ff4d6d;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 14px 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 0 #b13e55, 0 5px 15px #f27c96;
+            transition: 0.07s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid #ffe5ec;
+            font-family: 'Quicksand', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .button-heart:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #b13e55;
+        }
+
+        .hidden-message-box {
+            background: #fff9fb;
+            border-radius: 35px;
+            padding: 20px 25px;
+            font-size: 1.4rem;
+            color: #a1355a;
+            border: 3px dotted #ff98b2;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: 0.2s;
+            word-break: break-word;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 25px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c64774;
+            border-top: 3px wavy #ffb1c2;
+            padding-top: 20px;
+        }
+
+        .signature span {
+            background: #ffdae2;
+            padding: 5px 20px 5px 30px;
+            border-radius: 40px 0 0 40px;
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        /* mobile fine-tune */
+        @media (max-width: 550px) {
+            .letter-card {
+                padding: 25px 15px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .sub-header {
+                font-size: 1.1rem;
+            }
+            .hidden-message-box {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-card">
+        <h1>🌷💌 Happy Valentine's, bestie! 💌🌷</h1>
+        <div style="text-align: center;">
+            <span class="sub-header">for my favourite human ✨</span>
+        </div>
+
+        <!-- heartfelt letter content (no photos, just pure love) -->
+        <div class="message">
+            <p>To my absolute favourite person in the world,</p>
+            <p>On this Valentine’s Day, I just wanted to put into words how much your friendship means to me. You’re the one I text random thoughts at 2am, the one who laughs at my stupid jokes, and the one who’s always got my back. They say friends are the family you choose — and I’d choose you over and over again. 💕</p>
+            <p>Thank you for all the vent sessions, the spontaneous adventures, the ‘one more episode’ marathons, and for being my number one hype girl. Life is so much sweeter with you in it.</p>
+            <p class="emoji-burst">🫶🏼 🫂 💖 ✨ 🥰</p>
+            <p>Hope your day is filled with chocolate, inside jokes, and as much joy as you bring to me.</p>
+        </div>
+
+        <!-- interactive javascript zone – because besties need surprises -->
+        <div class="bestie-zone">
+            <div style="text-align: center;">
+                <button class="button-heart" id="bestieMagicBtn">💘 click for a bestie boost 💘</button>
+            </div>
+            <div class="hidden-message-box" id="dynamicMessage">
+                You make every day brighter! 🌟
+            </div>
+        </div>
+
+        <!-- signed with love -->
+        <div class="signature">
+            <span>💗 your bestie forever 💗</span>
+        </div>
+        <p style="text-align: center; margin-top: 15px; font-size: 1.3rem; color:#b94e6f;">❤️‍🔥 xoxo, [your name] ❤️‍🔥</p>
+    </div>
+
+    <!-- simple javascript to make it extra special -->
+    <script>
+        (function() {
+            // array of sweet, funny bestie messages
+            const bestieMessages = [
+                "Bestie, you're the peanut butter to my jelly 🥜🍓",
+                "We're like a really small gang! 👯‍♀️💥",
+                "Thanks for always laughing at my typos 😂",
+                "You're the reason I check my phone first thing 📱💕",
+                "I'll always save you the last fry 🍟",
+                "Having you as a bestie is my favorite plot twist 📖✨",
+                "You just get me. no explanation needed. 🫶",
+                "We'll be those grandmas causing trouble together 👵🏼👵🏆",
+                "Life with you is a sleepover that never ends 🛏️🧸",
+                "You're my person. always. 💞"
+            ];
+
+            const messageBox = document.getElementById('dynamicMessage');
+            const magicBtn = document.getElementById('bestieMagicBtn');
+
+            if (magicBtn && messageBox) {
+                magicBtn.addEventListener('click', function() {
+                    // pick a random index
+                    const randomIndex = Math.floor(Math.random() * bestieMessages.length);
+                    const selectedMessage = bestieMessages[randomIndex];
+
+                    // add a little surprise emoji burst
+                    const emojis = ['💘', '💖', '🥰', '✨', '💕', '😘', '🌸'];
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+                    // set the message with emoji framing
+                    messageBox.innerHTML = `${randomEmoji} ${selectedMessage} ${randomEmoji}`;
+
+                    // playful button feedback
+                    magicBtn.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        magicBtn.style.transform = 'scale(1)';
+                    }, 100);
+                });
+            }
+
+            // a little love note in the console, because why not
+            console.log("💝 you're the best bestie ever! (even in console) 💝");
+        })();
+    </script>
+</body>
+</html>
